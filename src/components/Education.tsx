@@ -29,45 +29,45 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-gray-800">
+    <section id="education" className="py-20 bg-white dark:bg-black border-b border-space-gray-200 dark:border-space-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+        <h2 className="text-4xl font-bold text-black dark:text-white mb-4 text-center">
           Education
         </h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+        <div className="w-20 h-1 bg-black dark:bg-white mx-auto mb-12"></div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {education.map((edu, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-8 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-space-gray-50 dark:bg-space-gray-900/50 rounded-lg p-8 border border-space-gray-200 dark:border-space-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1"
             >
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex-shrink-0">
-                  <GraduationCap className="text-blue-600 dark:text-blue-400" size={32} />
+                <div className="p-3 bg-space-gray-100 dark:bg-space-gray-800 rounded-lg flex-shrink-0">
+                  <GraduationCap className="text-black dark:text-white" size={32} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                  <h3 className="text-xl font-bold text-black dark:text-white mb-1">
                     {edu.degree}
                   </h3>
-                  <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                  <p className="text-lg text-black dark:text-white font-semibold mb-2">
                     {edu.field}
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-2">
+                  <p className="text-space-gray-700 dark:text-space-gray-300 mb-2">
                     {edu.institution}
                   </p>
                   {edu.location && (
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    <p className="text-sm text-space-gray-600 dark:text-space-gray-400 mb-2">
                       {edu.location}
                     </p>
                   )}
-                  <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center gap-4 text-space-gray-600 dark:text-space-gray-400">
                     <span className="font-medium">{edu.year}</span>
                     {edu.gpa && (
                       <>
                         <span>•</span>
                         <div className="flex items-center gap-2">
-                          <Award size={16} className="text-emerald-600 dark:text-emerald-400" />
+                          <Award size={16} className="text-black dark:text-white" />
                           <span className="font-semibold">GPA: {edu.gpa}</span>
                         </div>
                       </>
@@ -80,16 +80,16 @@ export default function Education() {
         </div>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h3 className="text-2xl font-bold text-black dark:text-white mb-6 text-center">
             Certifications
           </h3>
-          <div className="flex items-center justify-center gap-4 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-gray-700/50 dark:to-gray-700/30 rounded-lg p-8 border border-blue-200 dark:border-blue-900/30">
-            <Award className="text-emerald-600 dark:text-emerald-400 flex-shrink-0" size={32} />
+          <div className="flex items-center justify-center gap-4 bg-space-gray-100 dark:bg-space-gray-800 rounded-lg p-8 border border-space-gray-300 dark:border-space-gray-700">
+            <Award className="text-black dark:text-white flex-shrink-0" size={32} />
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+              <h4 className="text-lg font-semibold text-black dark:text-white">
                 Building RAG Agents with LLMs
               </h4>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-space-gray-700 dark:text-space-gray-300">
                 NVIDIA
               </p>
             </div>

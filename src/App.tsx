@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className={isDark ? 'dark' : ''}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
         <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
 
         <Hero />
@@ -24,8 +24,8 @@ function App() {
         <Education />
         <Contact />
 
-        <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+        <footer className="bg-white dark:bg-black border-t border-space-gray-200 dark:border-space-gray-800 py-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-space-gray-600 dark:text-space-gray-400">
             <p>&copy; {new Date().getFullYear()} Yahaya Yusuf. All rights reserved.</p>
           </div>
         </footer>

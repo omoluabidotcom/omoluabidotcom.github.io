@@ -31,12 +31,12 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-space-gray-50 dark:bg-space-gray-950 border-b border-space-gray-200 dark:border-space-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+        <h2 className="text-4xl font-bold text-black dark:text-white mb-4 text-center">
           Personal Projects
         </h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+        <div className="w-20 h-1 bg-black dark:bg-white mx-auto mb-12"></div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => {
@@ -44,37 +44,37 @@ export default function Projects() {
             return (
               <article
                 key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 flex flex-col"
+                className="bg-white dark:bg-space-gray-900 rounded-lg border border-space-gray-200 dark:border-space-gray-800 overflow-hidden hover:border-black dark:hover:border-white transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 flex flex-col"
               >
                 <div className="p-6 flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                      <Icon className="text-blue-600 dark:text-blue-400" size={24} />
+                    <div className="p-3 bg-space-gray-100 dark:bg-space-gray-800 rounded-lg">
+                      <Icon className="text-black dark:text-white" size={24} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-2xl font-bold text-black dark:text-white">
                       {project.title}
                     </h3>
                   </div>
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
+                      <h4 className="text-sm font-semibold text-space-gray-600 dark:text-space-gray-400 uppercase tracking-wide mb-2">
                         Problem Statement
                       </h4>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <p className="text-space-gray-700 dark:text-space-gray-300 leading-relaxed">
                         {project.problem}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
+                      <h4 className="text-sm font-semibold text-space-gray-600 dark:text-space-gray-400 uppercase tracking-wide mb-2">
                         Tech Stack
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+                            className="px-3 py-1 bg-space-gray-100 dark:bg-space-gray-800 text-space-gray-700 dark:text-space-gray-300 rounded-full text-sm border border-space-gray-200 dark:border-space-gray-700"
                           >
                             {tech}
                           </span>
@@ -83,16 +83,16 @@ export default function Projects() {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
+                      <h4 className="text-sm font-semibold text-space-gray-600 dark:text-space-gray-400 uppercase tracking-wide mb-2">
                         Key Contributions
                       </h4>
                       <ul className="space-y-2">
                         {project.contributions.map((contribution, contribIndex) => (
                           <li
                             key={contribIndex}
-                            className="flex items-start gap-2 text-gray-700 dark:text-gray-300"
+                            className="flex items-start gap-2 text-space-gray-700 dark:text-space-gray-300"
                           >
-                            <span className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="w-1.5 h-1.5 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0"></span>
                             <span className="text-sm">{contribution}</span>
                           </li>
                         ))}
@@ -101,12 +101,12 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-200 dark:border-gray-700">
+                <div className="p-6 bg-space-gray-50 dark:bg-space-gray-800/50 border-t border-space-gray-200 dark:border-space-gray-800">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors group"
+                    className="inline-flex items-center gap-2 text-black dark:text-white hover:text-space-gray-700 dark:hover:text-space-gray-300 font-semibold transition-colors group"
                     aria-label={`View ${project.title} on GitHub`}
                   >
                     <Github size={20} />
