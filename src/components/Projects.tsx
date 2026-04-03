@@ -3,27 +3,27 @@ import { ExternalLink, Github, Code, Zap } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'Job Application Platform Backend',
-      problem: 'Built a comprehensive recruitment platform connecting job seekers with employers, featuring role-based access control and payment processing',
-      techStack: ['Spring Boot', 'Hibernate', 'REST APIs', 'PostgreSQL', 'Paystack'],
+      title: 'City Water Billing System',
+      problem: 'Architected and developed a full-stack Java billing engine handling consumption metering, tariff calculations, and payment reconciliation in a production-ready system with mobile-first access and integrated payment processing',
+      techStack: ['Spring Boot', 'Jakarta EE', 'Vaadin', 'PostgreSQL', 'USSD', 'Payment Integration'],
       contributions: [
-        'Developed admin dashboard APIs with role-based access control',
-        'Created analytics microservice for recruiters and job seekers',
-        'Integrated Paystack payment gateway for premium features',
-        'Designed scalable database schema for multi-tenant architecture'
+        'Implemented core business logic for consumption metering, tariff calculations, and payment reconciliation',
+        'Built server-side UI framework using Vaadin for responsive customer management and billing operations',
+        'Designed and implemented USSD customer interface for mobile-first access across feature phones and diverse connectivity scenarios',
+        'Integrated payment gateway systems enabling secure online processing and automated reconciliation with multiple payment methods'
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
       icon: Code
     },
     {
-      title: 'Automated Chatbot Deployment',
-      problem: 'Implemented fully automated CI/CD pipeline for rapid deployment of Java-based chatbot applications with zero-downtime releases',
-      techStack: ['Jenkins', 'Docker', 'Maven', 'Java'],
+      title: 'Chatbot Application with LLM Integration',
+      problem: 'Built an intelligent chatbot application integrating LLM APIs with automated CI/CD pipeline for consistent, zero-manual-intervention deployments',
+      techStack: ['Spring AI', 'Docker', 'Jenkins', 'Maven', 'Java', 'LLM APIs'],
       contributions: [
-        'Built end-to-end CI/CD pipeline with automated testing',
-        'Containerized Java application using Docker',
-        'Improved delivery speed by 50% through automation',
-        'Implemented automated rollback mechanisms for failed deployments'
+        'Integrated LLM APIs using SpringAI to streamline application interaction with language models',
+        'Containerized application with Docker, improving deployment consistency and eliminating environment-related failures',
+        'Implemented full CI/CD pipeline using Jenkins and Docker for automated build, test, and deployment',
+        'Enabled zero-manual-intervention releases with automated rollback capabilities'
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
       icon: Zap

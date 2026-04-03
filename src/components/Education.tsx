@@ -3,18 +3,28 @@ import { GraduationCap, Award } from 'lucide-react';
 export default function Education() {
   const education = [
     {
+      degree: 'Postgraduate Diploma',
+      field: 'Information Technology',
+      institution: 'National Open University of Nigeria',
+      year: 'January 2026 - December 2026',
+      gpa: null,
+      location: 'Abuja, Nigeria'
+    },
+    {
       degree: 'Higher National Diploma',
       field: 'Physics/Electronics',
       institution: 'Federal Polytechnic, Bida',
       year: '2021',
-      gpa: '3.40/4.0'
+      gpa: '3.40/4.0',
+      location: 'Niger, Nigeria'
     },
     {
       degree: 'National Diploma',
       field: 'Science Laboratory Technology',
       institution: 'Federal Polytechnic, Bida',
       year: '2017',
-      gpa: null
+      gpa: null,
+      location: 'Niger, Nigeria'
     }
   ];
 
@@ -26,7 +36,7 @@ export default function Education() {
         </h2>
         <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {education.map((edu, index) => (
             <div
               key={index}
@@ -46,6 +56,11 @@ export default function Education() {
                   <p className="text-gray-700 dark:text-gray-300 mb-2">
                     {edu.institution}
                   </p>
+                  {edu.location && (
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                      {edu.location}
+                    </p>
+                  )}
                   <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
                     <span className="font-medium">{edu.year}</span>
                     {edu.gpa && (
@@ -62,6 +77,23 @@ export default function Education() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Certifications
+          </h3>
+          <div className="flex items-center justify-center gap-4 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-gray-700/50 dark:to-gray-700/30 rounded-lg p-8 border border-blue-200 dark:border-blue-900/30">
+            <Award className="text-emerald-600 dark:text-emerald-400 flex-shrink-0" size={32} />
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                Building RAG Agents with LLMs
+              </h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                NVIDIA
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

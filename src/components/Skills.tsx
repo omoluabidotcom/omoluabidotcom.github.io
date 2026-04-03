@@ -10,27 +10,27 @@ export default function Skills() {
     {
       icon: Layers,
       title: 'Frameworks',
-      skills: ['Spring', 'Spring Boot', 'Spring MVC', 'Hibernate', 'JUnit']
+      skills: ['Spring Boot', 'Spring MVC', 'Spring AI', 'J2EE', 'Jakarta EE', 'Hibernate', 'JUnit', 'Vaadin', 'JSP', 'React.js']
     },
     {
       icon: Globe,
       title: 'Architecture',
-      skills: ['RESTful APIs', 'Microservices', 'Role-Based Access Control']
+      skills: ['RESTful APIs', 'Microservices', 'Role-Based Access Control', 'System Design']
     },
     {
       icon: Code,
-      title: 'Frontend',
-      skills: ['React.js', 'Vaadin', 'JSP']
+      title: 'Cloud Technologies',
+      skills: ['AWS (VPC, EC2, S3)', 'Linode', 'Docker', 'Ubuntu', 'Apache Tomcat']
     },
     {
       icon: Database,
       title: 'Databases',
-      skills: ['PostgreSQL', 'MySQL']
+      skills: ['PostgreSQL', 'MySQL', 'Microsoft SQL']
     },
     {
       icon: Cloud,
-      title: 'DevOps & Cloud',
-      skills: ['Docker', 'Jenkins', 'Maven', 'Git', 'AWS (EC2, VPC, IAM, S3)', 'Linode']
+      title: 'DevOps & CI/CD',
+      skills: ['Jenkins', 'Maven', 'Git', 'Docker', 'GitHub Copilot', 'Cursor']
     }
   ];
 

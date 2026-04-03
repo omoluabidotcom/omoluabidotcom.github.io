@@ -2,13 +2,14 @@ import { Briefcase, Calendar, CheckCircle } from 'lucide-react';
 
 export default function Experience() {
   const achievements = [
-    'Executed 850,000+ record data migration with minimal downtime',
-    'Co-led a 5-person team building a scalable backend for a Mobile Device Management platform',
-    'Built CI/CD pipelines using Docker and Jenkins, reducing deployment time by 80%',
-    'Implemented interoperability mediator between SORMAS and DHIS2 for Nigeria\'s Ministry of Health',
-    'Led frontend development with React.js for mortality tracking dashboards',
-    'Migrated legacy system from Vaadin 8 to Vaadin 24, improving performance by 60%',
-    'Expanded multilingual support from 40% to 95%, improving accessibility and adoption'
+    'Executed large-scale data migration, handling 850,000+ death certificate records with zero downtime',
+    'Architected and implemented an interoperability mediator enabling real-time data exchange between SORMAS and DHIS2 systems for Nigerian Federal Ministry of Health, streamlining disease surveillance workflows',
+    'Led development for DHIS2 Mortality Tracking System, transforming years-long data collection processes into real-time reporting capabilities for health officials',
+    'Played pivotal role in transitioning legacy system from Vaadin 8 to Vaadin 24, achieving 60% performance increase across application',
+    'Expanded application multilingual support from 60% to 95%, ensuring broader user adoption',
+    'Built feature for admin users to create form definitions in data-collection system, previously done manually in database, improving configuration efficiency',
+    'Deployed and customized enterprise platforms (SORMAS, WSO2 IoT server, OpenHIM, DHIS2) on Linux server instances supporting critical health information systems',
+    'Led team of 5 developers to write user manual and record video guides for Mortality App, resulting in 45% increase in usage'
   ];
 
   return (
@@ -58,7 +59,7 @@ export default function Experience() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {['Spring Boot', 'Microservices', 'Docker', 'Jenkins', 'React.js', 'PostgreSQL', 'AWS', 'REST APIs'].map((tech, index) => (
+              {['Spring Boot', 'Spring AI', 'DHIS2', 'SORMAS', 'Vaadin', 'Docker', 'Jenkins', 'React.js', 'PostgreSQL', 'AWS', 'REST APIs', 'Microservices'].map((tech, index) => (
                 <span
                   key={index}
                   className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
