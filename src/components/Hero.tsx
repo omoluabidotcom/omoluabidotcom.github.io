@@ -69,7 +69,7 @@ export default function Hero() {
             <Linkedin size={28} />
           </a>
           <a
-            href="mailto:yyahaya222@yahoo.com"
+            href="mailto:yyahaya222@gmail.com"
             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors transform hover:scale-110 duration-300"
             aria-label="Send me an email"
           >

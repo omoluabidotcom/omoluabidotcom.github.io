@@ -77,16 +77,16 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="mailto:yyahaya222@yahoo.com"
+                href="mailto:yyahaya222@gmal.com"
                 className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                aria-label="Send email to yyahaya222@yahoo.com"
+                aria-label="Send email to yyahaya222@gmail.com"
               >
                 <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:scale-110 transition-transform">
                   <Mail className="text-blue-600 dark:text-blue-400" size={24} />
                 </div>
                 <div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Email</div>
-                  <div className="text-gray-900 dark:text-white font-semibold">yyahaya222@yahoo.com</div>
+                  <div className="text-gray-900 dark:text-white font-semibold">yyahaya222@gmail.com</div>
                 </div>
               </a>
 

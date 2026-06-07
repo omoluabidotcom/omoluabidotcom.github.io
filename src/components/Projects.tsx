@@ -3,14 +3,14 @@ import { ExternalLink, Github, Code, Zap } from 'lucide-react';
 export default function Projects() {
   const projects = [
     {
-      title: 'City Water Billing System',
+      title: 'City Water Billing System - Interswitch Hackathon Project(2026)',
       problem: 'Architected and developed a full-stack Java billing engine handling consumption metering, tariff calculations, and payment reconciliation in a production-ready system with mobile-first access and integrated payment processing',
       techStack: ['Spring Boot', 'Jakarta EE', 'Vaadin', 'PostgreSQL', 'USSD', 'Payment Integration'],
       contributions: [
         'Implemented core business logic for consumption metering, tariff calculations, and payment reconciliation',
         'Built server-side UI framework using Vaadin for responsive customer management and billing operations',
         'Designed and implemented USSD customer interface for mobile-first access across feature phones and diverse connectivity scenarios',
-        'Integrated payment gateway systems enabling secure online processing and automated reconciliation with multiple payment methods'
+        'Integrated Interswitch payment gateway systems for seamless online payments and real-time transaction processing',
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
       icon: Code
@@ -27,6 +27,19 @@ export default function Projects() {
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
       icon: Zap
+    },
+    {
+      title: 'Published a Java Package',
+      problem: 'Published a Java package to Sonatype for the Java frontend framework(Vaadin), enabling developers to easily collect phone numbers from users with built-in validation and formatting with country code support',
+      techStack: ['Java', 'Maven', 'Vaadin', 'Junit'],
+      contributions: [
+        'Published a Java package to Sonatype for the Vaadin framework, enabling developers to easily collect phone numbers from users with built-in validation and formatting',
+        'Implemented unit tests using Junit to ensure package reliability and functionality',
+        'Configured Maven for seamless package deployment and version management',
+        'Provided comprehensive documentation for developers to integrate the package into their projects'
+      ],
+      githubUrl: 'https://github.com/omoluabidotcom',
+      icon: Code
     }
   ];
 
@@ -59,7 +72,7 @@ export default function Projects() {
                   <div className="space-y-4">
                     <div>
                       <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
-                        Problem Statement
+                        Summary
                       </h4>
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                         {project.problem}

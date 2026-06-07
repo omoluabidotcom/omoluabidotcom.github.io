@@ -78,23 +78,7 @@ export default function Education() {
             </div>
           ))}
         </div>
-
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            Certifications
-          </h3>
-          <div className="flex items-center justify-center gap-4 bg-gradient-to-r from-blue-50 to-emerald-50 dark:from-gray-700/50 dark:to-gray-700/30 rounded-lg p-8 border border-blue-200 dark:border-blue-900/30">
-            <Award className="text-emerald-600 dark:text-emerald-400 flex-shrink-0" size={32} />
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Building RAG Agents with LLMs
-              </h4>
-              <p className="text-gray-700 dark:text-gray-300">
-                NVIDIA
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
