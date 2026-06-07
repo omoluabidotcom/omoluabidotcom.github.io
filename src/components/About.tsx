@@ -5,7 +5,7 @@ export default function About() {
     {
       icon: Server,
       title: 'Enterprise Systems',
-      description: 'Building national-scale health and government platforms'
+      description: 'Building large-scale systems for critical infrastructure and public health platforms'
     },
     {
       icon: Code2,
@@ -35,13 +35,13 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a Java developer with extensive experience building enterprise-grade backend systems that power critical infrastructure and serve thousands of users.
+              I'm a Senior Java Engineer with extensive experience building enterprise-grade backend systems that power critical infrastructure.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              My expertise lies in designing and implementing scalable microservices architectures using Spring Boot, REST APIs, and modern DevOps practices. I've worked on national-scale health and government platforms, where reliability and performance are paramount.
+              My expertise lies in designing and implementing scalable microservices architectures using Spring Boot, REST APIs, and modern DevOps practices. I've worked on national-scale health and government platforms, enterprise systems where reliability and performance are paramount. I have a strong experience modernizing legacy systems, optimizing performance, and ensuring software quality.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm passionate about writing clean, maintainable code, implementing robust CI/CD pipelines, and delivering software that makes a real-world impact.
+              I'm passionate about delivering software that makes a real-world impact.
             </p>
           </div>
 

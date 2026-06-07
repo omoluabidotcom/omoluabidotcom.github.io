@@ -3,23 +3,23 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import WorkProjects from './components/WorkProjects';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
-import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const [isDark, setIsDark] = useState(true);
 
   return (
     <div className={isDark ? 'dark' : ''}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">       
 
         <Hero />
         <About />
         <Skills />
         <Experience />
+        <WorkProjects />
         <Projects />
         <Education />
         <Contact />

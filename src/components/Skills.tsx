@@ -5,7 +5,7 @@ export default function Skills() {
     {
       icon: Code,
       title: 'Languages',
-      skills: ['Java', 'JavaScript']
+      skills: ['Java', 'JavaScript', 'SQL']
     },
     {
       icon: Layers,
@@ -20,7 +20,7 @@ export default function Skills() {
     {
       icon: Code,
       title: 'Cloud Technologies',
-      skills: ['AWS (VPC, EC2, S3)', 'Linode', 'Docker', 'Ubuntu', 'Apache Tomcat']
+      skills: ['AWS (VPC, EC2, S3)', 'Linode', 'Docker', 'Ubuntu', 'Apache Tomcat', 'Payara Server']
     },
     {
       icon: Database,
@@ -30,7 +30,7 @@ export default function Skills() {
     {
       icon: Cloud,
       title: 'DevOps & CI/CD',
-      skills: ['Jenkins', 'Maven', 'Git', 'Docker', 'GitHub Copilot', 'Cursor']
+      skills: ['Jenkins', 'Maven', 'Git', 'Docker']
     }
   ];
 
