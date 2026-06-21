@@ -40,6 +40,19 @@ export default function Projects() {
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
       icon: Code
+    },
+    {
+      title: 'Unilevel Commission Management System',
+      problem: 'Built a production-style commission platform for distributor networks with secure authentication, role-based workflows, automated monthly commission generation, and operational dashboards for admin and distributors. This is currently in production use by a client, and is being actively maintained and improved.',
+      techStack: ['Node.js', 'Express', 'MySQL', 'JWT', 'HTML', 'CSS', 'JavaScript'],
+      contributions: [
+        'Designed and implemented REST APIs for authentication, user management, purchases, notifications, and settings administration',
+        'Developed automated month-based commission generation logic with eligibility thresholds and safe update behavior for pending records',
+        'Implemented role-based access control for admin and distributor workflows, including downline visibility and profile management',
+        'Created operational dashboards for admins to monitor performance, commissions and user activities',
+      ],
+      githubUrl: 'https://github.com/omoluabidotcom/Unilevel-Commission-Management-System',
+      icon: Zap
     }
   ];
 
