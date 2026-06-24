@@ -24,7 +24,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 animate-fade-in-up animation-delay-200">
-          Senior Java Engineer | Spring Boot | Microservices Architecture
+          Java Software Engineer | Spring Boot | Microservices Architecture
         </p>
 
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-12 animate-fade-in-up animation-delay-400">

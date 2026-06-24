@@ -25,7 +25,7 @@ export default function Experience() {
                 <div className="flex items-center gap-3 mb-2">
                   <Briefcase className="text-blue-600 dark:text-blue-400" size={24} />
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    Senior Software Engineer (Java)
+                    Software Engineer(Java)
                   </h3>
                 </div>
                 <p className="text-xl text-gray-700 dark:text-gray-300 font-semibold mb-2">
