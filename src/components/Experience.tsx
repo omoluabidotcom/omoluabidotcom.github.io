@@ -5,6 +5,7 @@ export default function Experience() {
     'Engineered a zero-downtime data migration, migrating over one million death-certificate records from PostgreSQL into a different system using batch-processing strategies to ensure data integrity and zero data loss.',
     'Architected and developed an interoperability mediator enabling real-time RESTful API data exchange between SORMAS and DHIS2 for the Nigerian Federal Ministry of Health, streamlining disease-surveillance workflows.',
     'Led development of a mortality tracking system, transforming years-long manual data-collection processes into real-time reporting.',
+    'Led the migration of Carribean countries mortality record from 90s till date from ICD-10 to ICD-11 with 98% accuracy.',
     'Drove a legacy-to-modern migration from Vaadin 8 to Vaadin 24, resulting in a 60% improvement in application load time and significantly better user experience.',
     'Expanded multilingual internationalization (i18n) support from 60% to 95% of the application surface area.',
     'Built a self-service form-definition feature for admin users to configure data-collection forms at runtime, eliminating error-prone manual database changes that had previously caused production outages.'
