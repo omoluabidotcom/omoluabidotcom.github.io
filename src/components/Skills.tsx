@@ -15,12 +15,7 @@ export default function Skills() {
     {
       icon: Globe,
       title: 'Architecture',
-      skills: ['RESTful APIs', 'Microservices', 'Role-Based Access Control', 'System Design']
-    },
-    {
-      icon: Code,
-      title: 'Cloud Technologies',
-      skills: ['AWS (VPC, EC2, S3)', 'Linode', 'Docker', 'Ubuntu', 'Apache Tomcat', 'Payara Server']
+      skills: ['RESTful APIs', 'Microservices', 'Role-Based Access Control']
     },
     {
       icon: Database,
@@ -29,8 +24,8 @@ export default function Skills() {
     },
     {
       icon: Cloud,
-      title: 'DevOps & CI/CD',
-      skills: ['Jenkins', 'Maven', 'Git', 'Docker']
+      title: 'DevOps & Cloud Technologies',
+      skills: ['Jenkins', 'Maven', 'Git', 'Docker', 'Linode', 'Ubuntu', 'Apache Tomcat', 'Payara Server']
     }
   ];
 
