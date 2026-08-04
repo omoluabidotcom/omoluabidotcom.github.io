@@ -1,4 +1,6 @@
 import { ExternalLink, Github, Code, Zap } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
 export default function Projects() {
   const projects = [
@@ -13,7 +15,7 @@ export default function Projects() {
         'Integrated Interswitch payment gateway systems for seamless online payments and real-time transaction processing',
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
-      icon: Code
+      icon: Code,
     },
     {
       title: 'Chatbot Application with LLM Integration',
@@ -23,10 +25,10 @@ export default function Projects() {
         'Integrated LLM APIs using SpringAI to streamline application interaction with language models',
         'Containerized application with Docker, improving deployment consistency and eliminating environment-related failures',
         'Implemented full CI/CD pipeline using Jenkins and Docker for automated build, test, and deployment',
-        'Enabled zero-manual-intervention releases with automated rollback capabilities'
+        'Enabled zero-manual-intervention releases with automated rollback capabilities',
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
-      icon: Zap
+      icon: Zap,
     },
     {
       title: 'Published a Java Package',
@@ -36,10 +38,10 @@ export default function Projects() {
         'Published a Java package to Sonatype for the Vaadin framework, enabling developers to easily collect phone numbers from users with built-in validation and formatting',
         'Implemented unit tests using Junit to ensure package reliability and functionality',
         'Configured Maven for seamless package deployment and version management',
-        'Provided comprehensive documentation for developers to integrate the package into their projects'
+        'Provided comprehensive documentation for developers to integrate the package into their projects',
       ],
       githubUrl: 'https://github.com/omoluabidotcom',
-      icon: Code
+      icon: Code,
     },
     {
       title: 'Unilevel Commission Management System',
@@ -52,95 +54,77 @@ export default function Projects() {
         'Created operational dashboards for admins to monitor performance, commissions and user activities',
       ],
       githubUrl: 'https://github.com/omoluabidotcom/Unilevel-Commission-Management-System',
-      icon: Zap
-    }
+      icon: Zap,
+    },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-          Personal Projects
-        </h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <section id="projects" className="py-24 bg-white dark:bg-white/[0.02]">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          index="05"
+          title="Personal Projects"
+          subtitle="Things I've built to explore ideas, ship products, and sharpen my craft."
+        />
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <article
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 flex flex-col"
-              >
-                <div className="p-6 flex-1">
+              <Reveal as="article" key={index} delay={(index % 2) * 80} className="h-full">
+                <div className="card p-6 h-full flex flex-col hover:-translate-y-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                      <Icon className="text-blue-600 dark:text-blue-400" size={24} />
+                    <div className="p-2.5 rounded-lg bg-accent-500/10 shrink-0">
+                      <Icon className="text-accent-500" size={22} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug">
                       {project.title}
                     </h3>
                   </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
-                        Summary
-                      </h4>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                        {project.problem}
-                      </p>
-                    </div>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                    {project.problem}
+                  </p>
 
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
-                        Tech Stack
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.techStack.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-2">
-                        Key Contributions
-                      </h4>
-                      <ul className="space-y-2">
-                        {project.contributions.map((contribution, contribIndex) => (
-                          <li
-                            key={contribIndex}
-                            className="flex items-start gap-2 text-gray-700 dark:text-gray-300"
-                          >
-                            <span className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
-                            <span className="text-sm">{contribution}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="mb-4">
+                    <p className="eyebrow mb-2">Key Contributions</p>
+                    <ul className="space-y-1.5">
+                      {project.contributions.map((contribution, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-slate-700 dark:text-slate-300">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-1.5 shrink-0" />
+                          <span>{contribution}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
 
-                <div className="p-6 bg-gray-50 dark:bg-gray-700/50 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {project.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-0.5 rounded text-xs font-mono bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors group"
+                    className="group inline-flex items-center gap-2 mt-auto pt-4 border-t border-slate-200 dark:border-white/10 text-sm font-medium text-accent-600 dark:text-accent-400"
                     aria-label={`View ${project.title} on GitHub`}
                   >
-                    <Github size={20} />
-                    <span>View on GitHub</span>
-                    <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    <Github size={18} />
+                    View on GitHub
+                    <ExternalLink
+                      size={14}
+                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                    />
                   </a>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>

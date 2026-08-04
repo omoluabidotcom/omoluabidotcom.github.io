@@ -1,39 +1,48 @@
-import { useState } from 'react';
+import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import WorkProjects from './components/WorkProjects';
 import Projects from './components/Projects';
+import Blog from './components/Blog';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import { useTheme } from './hooks/useTheme';
+import { SITE } from './config';
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
+  const { isDark, toggle } = useTheme();
 
   return (
-    <div className={isDark ? 'dark' : ''}>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-        <header>
-          <Hero />
-        </header>
+    <div className="min-h-screen bg-canvas-light dark:bg-canvas-dark transition-colors duration-300">
+      <Nav isDark={isDark} onToggleTheme={toggle} />
 
-        <main>
-          <About />
-          <Skills />
-          <Experience />
-          <WorkProjects />
-          <Projects />
-          <Education />
-          <Contact />
-        </main>
+      <header>
+        <Hero />
+      </header>
 
-        <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Yahaya Yusuf. All rights reserved.</p>
-          </div>
-        </footer>
-      </div>
+      <main>
+        <About />
+        <Skills />
+        <Experience />
+        <WorkProjects />
+        <Projects />
+        <Blog />
+        <Education />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-slate-200 dark:border-white/10 py-10">
+        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+          <p className="font-mono">
+            © {new Date().getFullYear()} {SITE.name}
+          </p>
+          <p className="font-mono text-xs">
+            Built with React · TypeScript · Tailwind
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

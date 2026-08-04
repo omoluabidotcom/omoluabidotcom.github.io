@@ -1,4 +1,6 @@
-import { Briefcase, Calendar, CheckCircle } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
 
 export default function Experience() {
   const achievements = [
@@ -8,63 +10,71 @@ export default function Experience() {
     'Led the migration of Carribean countries mortality record from 90s till date from ICD-10 to ICD-11 with 98% accuracy.',
     'Drove a legacy-to-modern migration from Vaadin 8 to Vaadin 24, resulting in a 60% improvement in application load time and significantly better user experience.',
     'Expanded multilingual internationalization (i18n) support from 60% to 95% of the application surface area.',
-    'Built a self-service form-definition feature for admin users to configure data-collection forms at runtime, eliminating error-prone manual database changes that had previously caused production outages.'
+    'Built a self-service form-definition feature for admin users to configure data-collection forms at runtime, eliminating error-prone manual database changes that had previously caused production outages.',
   ];
 
-  return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-          Experience
-        </h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+  const tech = ['Java', 'Spring Boot', 'PostgreSQL', 'DHIS2', 'SORMAS', 'Vaadin 24', 'REST APIs', 'i18n', 'Batch Processing'];
 
-        <div className="relative">
-          <div className="relative bg-gray-50 dark:bg-gray-700/50 rounded-lg p-8 border-2 border-blue-600 dark:border-blue-400 shadow-xl">
-            <div className="flex flex-col md:flex-row md:items-start gap-4 mb-6">
-              <div className="flex-1">
+  return (
+    <section id="experience" className="py-24 bg-white dark:bg-white/[0.02]">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading index="03" title="Experience" />
+
+        <Reveal>
+          <div className="card p-8 relative overflow-hidden">
+            <span
+              className="absolute left-0 top-0 bottom-0 w-1 bg-accent-500"
+              aria-hidden="true"
+            />
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8 pl-4">
+              <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <Briefcase className="text-blue-600 dark:text-blue-400" size={24} />
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    Software Engineer(Java)
+                  <div className="p-2 rounded-lg bg-accent-500/10">
+                    <Briefcase className="text-accent-500" size={22} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Software Engineer (Java)
                   </h3>
                 </div>
-                <p className="text-xl text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                <p className="text-lg text-accent-600 dark:text-accent-400 font-semibold">
                   Mirabilia Nig Limited
                 </p>
-                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                  <Calendar size={16} />
-                  <span>Jan 2023 – Present</span>
-                </div>
+              </div>
+              <div className="inline-flex items-center gap-2 font-mono text-sm text-slate-500 dark:text-slate-400 shrink-0">
+                <Calendar size={15} />
+                Jan 2023 – Present
               </div>
             </div>
 
-            <div className="space-y-4">
+            <ul className="space-y-3 pl-4 mb-8">
               {achievements.map((achievement, index) => (
-                <div
+                <li
                   key={index}
-                  className="flex items-start gap-3 group hover:bg-white dark:hover:bg-gray-700 p-3 rounded-lg transition-colors duration-200"
+                  className="flex items-start gap-3 group p-2 -ml-2 rounded-lg hover:bg-accent-500/5 transition-colors"
                 >
-                  <CheckCircle className="text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <CheckCircle2
+                    className="text-accent-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
+                    size={18}
+                  />
+                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                     {achievement}
                   </p>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <div className="mt-8 flex flex-wrap gap-2">
-              {['Java', 'Spring Boot', 'PostgreSQL', 'DHIS2', 'SORMAS', 'Vaadin 24', 'REST APIs', 'i18n', 'Batch Processing'].map((tech, index) => (
+            <div className="flex flex-wrap gap-2 pl-4">
+              {tech.map((t, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                  className="px-3 py-1 rounded-full text-sm font-mono bg-accent-500/10 text-accent-700 dark:text-accent-300 border border-accent-500/20"
                 >
-                  {tech}
+                  {t}
                 </span>
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,12 +1,15 @@
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, CheckCircle2 } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+import Reveal from './Reveal';
+import { SOCIAL } from '../config';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -40,169 +43,120 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
 
-    if (validateForm()) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      }, 3000);
-    }
+    // Static site (no backend): hand off to the user's mail client with a
+    // prefilled message so the form actually delivers something.
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    const mailto = `mailto:${SOCIAL.email}?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 3000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
+  const inputClass = (field: string) =>
+    `w-full px-4 py-3 bg-white dark:bg-white/5 border ${
+      errors[field] ? 'border-red-500' : 'border-slate-300 dark:border-white/10'
+    } rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-colors text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500`;
+
+  const channels = [
+    { icon: Mail, label: 'Email', value: SOCIAL.email, href: `mailto:${SOCIAL.email}`, external: false },
+    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yahaya-yusuf', href: SOCIAL.linkedin, external: true },
+    { icon: Github, label: 'GitHub', value: 'github.com/omoluabidotcom', href: SOCIAL.github, external: true },
+  ];
+
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-          Get In Touch
-        </h2>
-        <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <section id="contact" className="py-24 bg-canvas-light dark:bg-canvas-dark">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading index="08" title="Get In Touch" />
 
         <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <Reveal>
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               Let's Connect
             </h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, or potential collaborations. Feel free to reach out through any of the channels below.
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+              I'm always open to discussing new opportunities, interesting projects, or
+              potential collaborations. Feel free to reach out through any of the channels
+              below.
             </p>
 
-            <div className="space-y-4">
-              <a
-                href="mailto:yyahaya222@gmail.com"
-                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                aria-label="Send email to yyahaya222@gmail.com"
-              >
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:scale-110 transition-transform">
-                  <Mail className="text-blue-600 dark:text-blue-400" size={24} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">Email</div>
-                  <div className="text-gray-900 dark:text-white font-semibold">yyahaya222@gmail.com</div>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com/in/yahaya-yusuf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                aria-label="Visit LinkedIn profile"
-              >
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:scale-110 transition-transform">
-                  <Linkedin className="text-blue-600 dark:text-blue-400" size={24} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">LinkedIn</div>
-                  <div className="text-gray-900 dark:text-white font-semibold">linkedin.com/in/yahaya-yusuf</div>
-                </div>
-              </a>
-
-              <a
-                href="https://github.com/omoluabidotcom"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 group"
-                aria-label="Visit GitHub profile"
-              >
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg group-hover:scale-110 transition-transform">
-                  <Github className="text-blue-600 dark:text-blue-400" size={24} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">GitHub</div>
-                  <div className="text-gray-900 dark:text-white font-semibold">github.com/omoluabidotcom</div>
-                </div>
-              </a>
+            <div className="space-y-3">
+              {channels.map(({ icon: Icon, label, value, href, external }) => (
+                <a
+                  key={label}
+                  href={href}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="card group flex items-center gap-4 p-4 hover:-translate-y-0.5"
+                  aria-label={`${label}: ${value}`}
+                >
+                  <div className="p-3 rounded-lg bg-accent-500/10 group-hover:scale-110 transition-transform">
+                    <Icon className="text-accent-500" size={22} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                      {label}
+                    </div>
+                    <div className="text-slate-900 dark:text-white font-medium">{value}</div>
+                  </div>
+                </a>
+              ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white dark:bg-gray-800 border ${
-                    errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 dark:text-white`}
-                  placeholder="John Doe"
-                  aria-required="true"
-                  aria-invalid={!!errors.name}
-                  aria-describedby={errors.name ? 'name-error' : undefined}
-                />
-                {errors.name && (
-                  <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">
-                    {errors.name}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Your Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white dark:bg-gray-800 border ${
-                    errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 dark:text-white`}
-                  placeholder="john@example.com"
-                  aria-required="true"
-                  aria-invalid={!!errors.email}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
-                />
-                {errors.email && (
-                  <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">
-                    {errors.email}
-                  </p>
-                )}
-              </div>
+          <Reveal delay={100}>
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+              {[
+                { id: 'name', label: 'Your Name', type: 'text', placeholder: 'John Doe' },
+                { id: 'email', label: 'Your Email', type: 'email', placeholder: 'john@example.com' },
+                { id: 'subject', label: 'Subject', type: 'text', placeholder: 'Project Inquiry' },
+              ].map(({ id, label, type, placeholder }) => (
+                <div key={id}>
+                  <label
+                    htmlFor={id}
+                    className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                  >
+                    {label} *
+                  </label>
+                  <input
+                    type={type}
+                    id={id}
+                    name={id}
+                    value={formData[id as keyof typeof formData]}
+                    onChange={handleChange}
+                    className={inputClass(id)}
+                    placeholder={placeholder}
+                    aria-required="true"
+                    aria-invalid={!!errors[id]}
+                    aria-describedby={errors[id] ? `${id}-error` : undefined}
+                  />
+                  {errors[id] && (
+                    <p id={`${id}-error`} className="mt-1 text-sm text-red-500" role="alert">
+                      {errors[id]}
+                    </p>
+                  )}
+                </div>
+              ))}
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-white dark:bg-gray-800 border ${
-                    errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 dark:text-white`}
-                  placeholder="Project Inquiry"
-                  aria-required="true"
-                  aria-invalid={!!errors.subject}
-                  aria-describedby={errors.subject ? 'subject-error' : undefined}
-                />
-                {errors.subject && (
-                  <p id="subject-error" className="mt-1 text-sm text-red-500" role="alert">
-                    {errors.subject}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
@@ -211,14 +165,12 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className={`w-full px-4 py-3 bg-white dark:bg-gray-800 border ${
-                    errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors text-gray-900 dark:text-white resize-none`}
+                  className={`${inputClass('message')} resize-none`}
                   placeholder="Tell me about your project or inquiry..."
                   aria-required="true"
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? 'message-error' : undefined}
-                ></textarea>
+                />
                 {errors.message && (
                   <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">
                     {errors.message}
@@ -229,17 +181,17 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitted}
-                className={`w-full py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`w-full py-3.5 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
                   isSubmitted
-                    ? 'bg-emerald-600 text-white'
-                    : 'bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+                    ? 'bg-accent-600 text-white'
+                    : 'bg-accent-500 hover:bg-accent-600 text-white shadow-lg shadow-accent-500/20 hover:shadow-accent-500/40 hover:-translate-y-0.5'
                 }`}
                 aria-label="Send message"
               >
                 {isSubmitted ? (
                   <>
-                    <CheckCircle size={20} />
-                    Message Sent!
+                    <CheckCircle2 size={20} />
+                    Opening your mail app…
                   </>
                 ) : (
                   <>
@@ -249,7 +201,7 @@ export default function Contact() {
                 )}
               </button>
             </form>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
