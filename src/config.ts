@@ -29,7 +29,7 @@ export const SOCIAL = {
 
 export const SITE = {
   name: 'Yahaya Yusuf',
-  role: 'Java Software Engineer',
+  role: 'Software Engineer',
   tagline: 'Spring Boot · Microservices · Enterprise Backend Systems',
 } as const;
 

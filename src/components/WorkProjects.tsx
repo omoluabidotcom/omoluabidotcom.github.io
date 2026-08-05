@@ -33,8 +33,8 @@ export default function WorkProjects() {
       techStack: ['Java', 'SpringMVC', 'SpringBoot', 'DHIS2', 'SORMAS', 'OpenHIM', 'Docker'],
       contributions: [
         'Deployed and configured the OpenHIM console for secure interoperability workflows.',
-        'Built Java services that pull data from DHIS2 and route it through OpenHIM to SORMAS.',
-        'Built Java services that pull data from SORMAS and route it through OpenHIM to DHIS2.',
+        'Built services that pull data from DHIS2 and route it through OpenHIM to SORMAS.',
+        'Built services that pull data from SORMAS and route it through OpenHIM to DHIS2.',
       ],
       icon: Building2,
     },

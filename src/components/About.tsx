@@ -34,7 +34,7 @@ export default function About() {
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           <Reveal className="lg:col-span-3 space-y-6">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              I'm a Java Software Engineer with extensive experience building
+              I'm a Software Engineer with extensive experience building
               enterprise-grade backend systems that power critical infrastructure.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
