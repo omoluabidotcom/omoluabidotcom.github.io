@@ -40,6 +40,7 @@ export const NAV_SECTIONS = [
   { id: 'experience', label: 'Experience' },
   { id: 'work-projects', label: 'Work' },
   { id: 'projects', label: 'Projects' },
+  { id: 'ev-stations', label: 'EV Map' },
   { id: 'blog', label: 'Blog' },
   { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
