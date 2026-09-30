@@ -35,15 +35,15 @@ export default function About() {
           <Reveal className="lg:col-span-3 space-y-6">
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               I'm a Software Engineer with extensive experience building
-              enterprise-grade backend systems that power critical infrastructure.
+              enterprise-grade systems that power mission-critical infrastructure.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              My expertise lies in designing and implementing scalable microservices
-              architectures using Spring Boot, REST APIs, and modern DevOps practices.
-              I've worked on national-scale health and government platforms, enterprise
-              systems where reliability and performance are paramount. I have a strong
-              experience modernizing legacy systems, optimizing performance, and ensuring
-              software quality.
+              My expertise lies in designing and implementing scalable architectures
+              using modern engineering practices.
+              I've worked on national-scale health and government platforms,
+              enterprise systems where reliability and performance are paramount.
+              I have experience in modernizing legacy systems,
+              optimizing performance, and ensuring software quality.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
               I'm passionate about delivering software that makes a real-world impact.

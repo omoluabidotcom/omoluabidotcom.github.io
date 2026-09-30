@@ -13,7 +13,7 @@ type WorkProject = {
 export default function WorkProjects() {
   const projects: WorkProject[] = [
     {
-      title: 'Polio Management System for CDC in Afghanistan',
+      title: 'Polio Vaccination Management System',
       summary:
         'Contributed to platform reliability, mobile engagement, and modernization efforts for a large-scale public health system used in production across critical immunization workflows.',
       techStack: ['Java', 'SpringMVC', 'J2EE', 'EJB', 'Android(Java)', 'Firebase Messaging', 'i18n', 'Vaadin 23', 'SORMAS'],
@@ -50,6 +50,19 @@ export default function WorkProjects() {
       ],
       icon: Briefcase,
     },
+    {
+      title: 'Mobile Device Management System',
+      summary:
+        'Developed a comprehensive enterprise platform for provisioning, monitoring, and securing corporate mobile devices remotely.',
+      techStack: ['Java', 'Spring Boot', 'Vaadin', 'PostgreSQL', 'REST APIs', 'Firebase Messaging', 'Rate Limiting', 'Async Task Processing', 'Code Review'],
+      contributions: [
+        'Engineered a secure backend to handle policy enforcement, and remote access capabilities.',
+        'Implemented robust REST APIs to synchronize configurations and track telemetry across many endpoints.',
+        'Firebase messaging integration for sending action to android devices',
+        'Code review and PR approval',
+      ],
+      icon: Briefcase,
+    },
   ];
 
   return (
@@ -58,7 +71,7 @@ export default function WorkProjects() {
         <SectionHeading
           index="04"
           title="Featured Work"
-          subtitle="Production systems delivered for national health and government platforms."
+          subtitle="Production systems delivered and used in active production."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

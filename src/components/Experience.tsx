@@ -13,7 +13,7 @@ export default function Experience() {
     'Built a self-service form-definition feature for admin users to configure data-collection forms at runtime, eliminating error-prone manual database changes that had previously caused production outages.',
   ];
 
-  const tech = ['Java', 'Spring Boot', 'PostgreSQL', 'DHIS2', 'SORMAS', 'Vaadin 24', 'REST APIs', 'i18n', 'Batch Processing'];
+  const tech = ['Java', 'JavaScript', 'TypeScript', 'React', 'Redux', 'Spring Boot', 'PostgreSQL', 'DHIS2', 'SORMAS', 'Vaadin 24', 'REST APIs', 'i18n', 'Batch Processing'];
 
   return (
     <section id="experience" className="py-24 bg-white dark:bg-white/[0.02]">

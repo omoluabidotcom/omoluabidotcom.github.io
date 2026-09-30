@@ -8,7 +8,7 @@ export default function Education() {
       degree: 'Postgraduate Diploma',
       field: 'Information Technology',
       institution: 'National Open University of Nigeria',
-      year: 'January 2026 - December 2026',
+      year: 'December 2025 - November 2026',
       gpa: null,
       location: 'Abuja, Nigeria',
     },
